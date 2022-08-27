@@ -10,11 +10,14 @@ const displayUsers = users => {
     for (const user of users) {
 
         const onePersonDiv = document.createElement('div');
-        onePersonDiv.classList.add('p-4', 'm-4', 'bg-sky-300', 'rounded-lg');
+        onePersonDiv.classList.add('p-4', 'm-4', 'bg-sky-300', 'rounded-lg', 'flex', 'justify-between');
         onePersonDiv.innerHTML = `
-            <h3>Full name: ${user.name.title} ${user.name.first} ${user.name.last}</h3>
-            <h3>email: ${user.email}</h3>
-            <h4>Age: ${user.dob.age} </h4>
+            <div>
+                <h3>Full name: ${user.name.title} ${user.name.first} ${user.name.last}</h3>
+                <h3>email: ${user.email}</h3>
+                <h4>Age: ${user.dob.age} </h4>
+            </div>
+            <img src="${user.picture.thumbnail}">
         `;
         containerDiv.appendChild(onePersonDiv);
     }
